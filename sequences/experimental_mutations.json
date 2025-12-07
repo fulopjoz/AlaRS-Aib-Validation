@@ -1,0 +1,70 @@
+{
+  "enzyme": "Pyrococcus horikoshii AlaRS",
+  "pdb_id": "2ZZF",
+  "uniprot_id": "WP_010884393.1",
+  "target_ncaa": "Aminoisobutyric acid (Aib)",
+  "ncaa_smiles": "CC(C)(N)C(=O)O",
+  "experimental_method": "LC-MS incorporation ratio",
+  
+  "sequences": {
+    "full_length": "MEFIMKTRMFEEEGWIRKKCKVCCGKPFWTLDPDRETCGDPPCDEYQFIGKPGIPRKYTLDEMREKFLRFFEKHEIYPHGRVKRYPVLPRWRDDVLLVGASIMDDFQPWVISGGEADPPANPLVISQPSIRFTDIDNVGITGRHFTIFEMMAHHAAFNYPGKPIYWMDETVELAJEFFTKELKMKPEDITFKENPWAGGGNAGPAFEEVLYRGLEVATLVFMQYKKAPENAPPQDQVVVIKGEKYIPMETKKVVDTGYGLERLVWMSQGTPTAYDAVLGYVVEPLKKMAGIEKIDEKILMENSRLAGMFDIEDLGDLRYLREQVAKRVGITVEEELEKAIRPYELIYAIADHTKAALTFMLADGVVPSNVKAGYLARLLIRKSIRHLRELGLEVPLSEIVALHIKELHKTFPEFKEMEDIILEMIELEEEKKYAETLRRGSDLVRREIAKLKKKGIKEIPVEKLVTFYESHGLTPEIVKEIAEEKEGVKVNIPDNFYSMVAKEAERTKEEKGEELVDFELLKDLPDTRRLYYEDPFMKEFDAKVLRVIKDWVILDATAFYPEGGGQPYDTGVLIVNGREVKVTNVQKVGKVIIHKVEDPGAFKEGMIVHGKIDWKRRIQHMRHHGTGHVLMGALVRVLGRHVWQAGSQLTTDWARDISHYKRISEEELKEIEMLANRIVMEDRKTVWEWLPRTTAEQKYGFRLYQGGVVPGREIRVVKIEDWDVQACGGTHLPSTGLVGPIKILRTERIQDDGVERIIFACGEAAIREWQKERDLLKKASNVLRVPPEKLPETAERFFNEWKARKEVDKLKKELARLLLVYELESKMQKIGSIEFIGGEVVEGSMMEDLRELVEKLKKPKRVVVLISRDGYFAVSVGSEVGVEANELAKKITLIAGGGGGGRRDIAQGKVKDISKAKDVIESIKSMFS",
+    
+    "truncated_no_editing": "MEFIMKTRMFEEEGWIRKKCKVCCGKPFWTLDPDRETCGDPPCDEYQFIGKPGIPRKYTLDEMREKFLRFFEKHEIYPHGRVKRYPVLPRWRDDVLLVGASIMDDFQPWVISGGEADPPANPLVISQPSIRFTDIDNVGITGRHFTIFEMMAHHAAFNYPGKPIYWMDETVELAJEFFTKELKMKPEDITFKENPWAGGGNAGPAFEEVLYRGLEVATLVFMQYKKAPENAPPQDQVVVIKGEKYIPMETKKVVDTGYGLERLVWMSQGTPTAYDAVLGYVVEPLKKMAGIEKIDEKILMENSRLAGMFDIEDLGDLRYLREQVAKRVGITVEEELEKAIRPYELIYAIADHTKAALTFMLADGVVPSNVKAGYLARLLIRKSIRHLRELGLEVPLSEIVALHIKELHKTFPEFKEMEDIILEMIELEEEKKYAETLRRGSDLVRREIAKLKKKGIKEIPVEKLVTFYESHGLTPEIVKEIAEEKEGVKVNIPDNFYSMVAKEAER"
+  },
+  
+  "experimental_mutants": [
+    {
+      "id": "mutant_1",
+      "mutations": ["W192H", "A193G", "V215G", "M217I", "N360A", "E459A"],
+      "incorporation_efficiency": 86.0,
+      "rank": 1,
+      "notes": "Best performer. N360A and E459A likely in editing domain."
+    },
+    {
+      "id": "mutant_2",
+      "mutations": ["W192H", "A193L", "V215G", "M217I", "N360A", "E459A"],
+      "incorporation_efficiency": 82.0,
+      "rank": 2,
+      "notes": "A193L instead of A193G. Slightly lower performance."
+    },
+    {
+      "id": "mutant_3",
+      "mutations": ["W192H", "T213A", "V215G", "T249F", "N360A", "E459A"],
+      "incorporation_efficiency": 83.0,
+      "rank": 3,
+      "notes": "Different second shell mutations (T213A, T249F)."
+    }
+  ],
+  
+  "mutation_analysis": {
+    "universal_mutations": ["V215G", "W192H"],
+    "editing_domain_mutations": ["N360A", "E459A"],
+    "variable_second_shell": ["A193G", "A193L", "M217I", "T213A", "T249F"],
+    
+    "key_residues": {
+      "192": {"wt": "W", "mutants": ["H"], "role": "Aromatic roof stabilization"},
+      "193": {"wt": "A", "mutants": ["G", "L"], "role": "Second shell flexibility"},
+      "213": {"wt": "T", "mutants": ["A"], "role": "Second shell"},
+      "215": {"wt": "V", "mutants": ["G"], "role": "Create cavity for Aib methyl"},
+      "217": {"wt": "M", "mutants": ["I"], "role": "Second shell packing"},
+      "249": {"wt": "T", "mutants": ["F"], "role": "Second shell"},
+      "360": {"wt": "N", "mutants": ["A"], "role": "Editing domain (removed in truncated)"},
+      "459": {"wt": "E", "mutants": ["A"], "role": "Editing domain (removed in truncated)"}
+    }
+  },
+  
+  "computational_validation_targets": {
+    "structure_prediction": {
+      "method": "AlphaFold3 or RoseTTAFold All-Atom",
+      "goal": "Show V215 clash with Aib in WT, accommodation in V215G"
+    },
+    "sequence_scoring": {
+      "method": "ESM-2 or ESM-1v",
+      "goal": "Rank mutants: 86% > 83% > 82% without structure"
+    },
+    "ligand_aware_design": {
+      "method": "LigandMPNN",
+      "goal": "Predict V215G, W192H, and second shell mutations"
+    }
+  }
+}
