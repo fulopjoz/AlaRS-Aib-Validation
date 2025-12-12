@@ -101,7 +101,7 @@ The LigandMPNN simulation **successfully predicted 5 out of 7** key active site 
 The computational pipeline successfully validates the experimental findings, demonstrating that a combined approach using **LigandMPNN for design** and **ESM-2 for fitness scoring** is a robust strategy for engineering aaRS for non-canonical amino acid incorporation.
 
 ---
-*Full code and data available on GitHub: [https://github.com/fulopjoz/AlaRS-Aib-Validation](https://github.com/fulopjoz/AlaRS-Aib-Validation)*
+*Full code and data available on GitHub: [Repository URL]*
 """
     
     with open(report_path, 'w') as f:
