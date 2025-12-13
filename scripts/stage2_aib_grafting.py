@@ -179,7 +179,7 @@ def main():
     print("  Stage 2: Aib Grafting")
     print("="*70 + "\n")
     
-    input_pdb = STRUCTURES_DIR / "2ZZF_clean.pdb"
+    input_pdb = STRUCTURES_DIR / "2ZZG_clean.pdb"
     
     # Find substrate
     scaffold_coords, chain_id = find_alanine_substrate(input_pdb)

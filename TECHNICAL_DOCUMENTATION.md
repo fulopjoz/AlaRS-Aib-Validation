@@ -44,13 +44,13 @@ python3.11 scripts/master_validation_pipeline.py
 
 ### 3.1. Stage 1: Structure Preparation (`stage1_structure_prep.py`)
 
--   **Action:** Downloads the PDB structure **2ZZF** (P. horikoshii AlaRS) from the RCSB PDB.
--   **Output:** `structures/2ZZF_clean.pdb` (Protein-only structure, chain A).
+-   **Action:** Downloads the PDB structure **2ZZG** (P. horikoshii AlaRS) from the RCSB PDB.
+-   **Output:** `structures/2ZZG_clean.pdb` (Protein-only structure, chain A).
 -   **Validation:** Confirms the wild-type residues at key mutation sites (W192, A193, V215, M217, etc.) match the expected sequence.
 
 ### 3.2. Stage 2: Aib Grafting (`stage2_aib_grafting.py`)
 
--   **Action:** Uses RDKit to construct the Aib molecule (SMILES: `CC(C)(N)C(=O)O`) and BioPython to graft it into the Ala binding site of the 2ZZF structure using a bio-mimetic approach (aligning backbone atoms of Aib to the native Alanine substrate).
+-   **Action:** Uses RDKit to construct the Aib molecule (SMILES: `CC(C)(N)C(=O)O`) and BioPython to graft it into the Ala binding site of the 2ZZG structure using a bio-mimetic approach (aligning backbone atoms of Aib to the native Alanine substrate).
 -   **Output:** `structures/AlaRS_Aib_Complex.pdb` (The starting point for LigandMPNN).
 
 ### 3.3. Stage 3: ESM-2 Zero-Shot Scoring (`stage3_esm2_scoring.py`)

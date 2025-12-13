@@ -85,7 +85,7 @@ def main():
     STRUCTURES_DIR.mkdir(parents=True, exist_ok=True)
     
     # Download and process
-    pdb_file = download_pdb("2ZZF")
+    pdb_file = download_pdb("2ZZG")
     clean_file = clean_structure(pdb_file)
     residues = analyze_structure(clean_file)
     

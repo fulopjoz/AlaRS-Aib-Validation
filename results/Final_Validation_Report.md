@@ -62,4 +62,4 @@ Based on the known function of V215 in the AlaRS active site and the geometry of
 The computational pipeline successfully validates the experimental findings, demonstrating that a combined approach using **LigandMPNN for design** and **ESM-2 for fitness scoring** is a robust strategy for engineering aaRS for non-canonical amino acid incorporation.
 
 ---
-*Full code and data available on GitHub: [https://github.com/fulopjoz/AlaRS-Aib-Validation](https://github.com/fulopjoz/AlaRS-Aib-Validation)*
+*Full code and data available on GitHub: [Repository URL]*

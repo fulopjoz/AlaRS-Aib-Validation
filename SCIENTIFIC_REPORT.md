@@ -10,13 +10,13 @@ The site-specific incorporation of non-canonical amino acids (ncAAs) requires th
 
 The expansion of the genetic code through the use of orthogonal translation systems (OTS) is a cornerstone of synthetic biology [1]. A major challenge in this field is the design of an aaRS capable of selectively charging a non-native tRNA with a target ncAA. Traditional directed evolution is labor-intensive, often yielding enzymes with suboptimal activity. The recent emergence of deep learning models for protein design offers a powerful alternative for rational engineering [2] [3].
 
-Aminoisobutyric acid (Aib) is of particular interest due to its constrained backbone geometry, which induces stable helical structures in peptides. Its incorporation into proteins requires the AlaRS active site to accommodate an additional methyl group at the $\alpha$-carbon, necessitating precise structural modifications. Experimental data from our collaborators identified three high-performing mutants of *P. horikoshii* AlaRS (PDB: 2ZZF) with incorporation efficiencies up to 86% (Table 1). This study aims to validate these experimental findings using state-of-the-art computational methods, thereby establishing a predictive framework for future design cycles.
+Aminoisobutyric acid (Aib) is of particular interest due to its constrained backbone geometry, which induces stable helical structures in peptides. Its incorporation into proteins requires the AlaRS active site to accommodate an additional methyl group at the $\alpha$-carbon, necessitating precise structural modifications. Experimental data from our collaborators identified three high-performing mutants of *P. horikoshii* AlaRS (PDB: 2ZZG) with incorporation efficiencies up to 86% (Table 1). This study aims to validate these experimental findings using state-of-the-art computational methods, thereby establishing a predictive framework for future design cycles.
 
 ## 2. Methodology
 
 ### 2.1. Structural Preparation and Ligand Grafting
 
-The wild-type structure of *P. horikoshii* AlaRS (PDB: 2ZZF) was used as the template. The Aib molecule (SMILES: `CC(C)(N)C(=O)O`) was built using RDKit and grafted into the native Alanine binding pocket via a bio-mimetic approach, aligning the backbone atoms (N, C, O, C$\alpha$) of Aib to the native Alanine substrate coordinates. This generated the starting complex for the design simulations.
+The wild-type structure of *P. horikoshii* AlaRS (PDB: 2ZZG) was used as the template. The Aib molecule (SMILES: `CC(C)(N)C(=O)O`) was built using RDKit and grafted into the native Alanine binding pocket via a bio-mimetic approach, aligning the backbone atoms (N, C, O, C$\alpha$) of Aib to the native Alanine substrate coordinates. This generated the starting complex for the design simulations.
 
 ### 2.2. Ligand-Aware Design Simulation (LigandMPNN)
 
