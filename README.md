@@ -16,7 +16,16 @@ The project is documented across three files to serve different audiences:
 
 ## Key Findings
 
-The computational pipeline successfully validated the experimental results:
+The computational pipeline now features two main capabilities:
+
+### 1. Retrospective Validation (Patent Reproducibility)
+The pipeline successfully validated the experimental results:
+
+### 2. Predictive Design (Maximal Yield)
+The pipeline includes a new feature to predict novel, high-yield mutants:
+
+*   **Predictive Scoring:** A combined LigandMPNN/ESM-2 scoring function is used to rank novel mutant combinations.
+*   **Output:** A list of top candidates predicted to achieve maximal Aib incorporation yield.
 
 *   **LigandMPNN** predicted the critical **V215G** and **W192H** mutations.
 *   **ESM-2** zero-shot scoring **perfectly correlated** with the experimental incorporation efficiency (86% > 83% > 82%).

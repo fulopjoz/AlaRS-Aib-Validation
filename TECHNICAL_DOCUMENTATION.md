@@ -69,6 +69,15 @@ python3.11 scripts/master_validation_pipeline.py
 
 ### 3.5. Stage 5: Final Analysis (`stage5_final_analysis.py`)
 
+-   **Action:** Consolidates all validation results into a final report.
+-   **Output:** `results/Final_Validation_Report.md`
+
+### 3.6. Stage 6: Predictive Design (`stage6_predictive_design.py`)
+
+-   **Action:** Implements a search algorithm combined with a synergistic LigandMPNN/ESM-2 scoring function to explore the mutation space.
+-   **Principle:** Predicts novel mutant combinations optimized for maximal yield by rewarding structural necessity (V215G, W192-variants) and evolutionary fitness.
+-   **Output:** `results/top_novel_mutants.json`
+
 -   **Action:** Consolidates all results into a final report.
 -   **Output:** `results/Final_Validation_Report.md`
 

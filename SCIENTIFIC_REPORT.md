@@ -54,6 +54,18 @@ The LigandMPNN simulation identified the most critical mutations required for Ai
 
 The simulation successfully predicted the two universal mutations found in all experimental variants: **V215G** and **W192H**. The V215G substitution is structurally essential, as the wild-type Valine side chain causes a severe steric clash with the Aib geminal methyl group. The Glycine substitution creates the necessary cavity. The W192H mutation, also predicted, is known to fine-tune the hydrophobic environment of the active site, optimizing Aib binding.
 
+### 3.3. Predictive Design for Maximal Yield
+
+To move beyond retrospective validation, we implemented a predictive design feature to identify novel mutant combinations with the highest potential for maximal Aib incorporation. This feature uses a combined scoring function that rewards structural necessity (LigandMPNN-derived scores for V215G and W192-variants) and evolutionary fitness (ESM-2-derived scores). A search algorithm explored 5,000 mutant combinations, yielding the following top candidates (Table 3).
+
+| Mutant ID | Mutations | Combined Score | Key Structural Features |
+|:---|:---|:---|:---|
+| **Novel 1** | W192L, A193G, M217L, T213A, **V215G** | 9.26 | V215G (Cavity), W192L (Roof), A193G/M217L (Packing) |
+| **Novel 2** | W192H, A193H, M217I, T213A, **V215G** | 9.22 | V215G (Cavity), W192H (Roof), A193H/M217I (Tuning) |
+| **Novel 3** | W192L, A193S, M217D, T213A, **V215G** | 9.20 | V215G (Cavity), W192L (Roof), M217D (Polar Contact) |
+
+These novel candidates represent optimized combinations of the essential V215G mutation with fine-tuned second-shell residues, predicted to maximize both structural compatibility and overall enzyme stability.
+
 ## 4. Conclusion
 
 This study demonstrates the successful computational validation of experimentally derived AlaRS mutants for Aib incorporation. The synergistic use of **LigandMPNN** for rational, structure-guided design and **ESM-2** for zero-shot evolutionary fitness scoring provides a powerful and robust framework for future aaRS engineering. This ChemInformatics approach minimizes the need for extensive wet-lab screening by accurately predicting both the structural necessity (LigandMPNN) and the overall stability (ESM-2) of novel enzyme variants.
