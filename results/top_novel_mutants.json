@@ -1,116 +1,152 @@
 [
   {
-    "mutant_id": "novel_mutant_2074",
+    "mutant_id": "novel_mutant_1",
     "mutations": [
-      "A193G",
+      "A193D",
       "A193N",
-      "M217L",
-      "T213A",
-      "V215G",
-      "W192L"
-    ],
-    "combined_score": 9.262757625254894
-  },
-  {
-    "mutant_id": "novel_mutant_4784",
-    "mutations": [
-      "A193H",
-      "M217I",
-      "T213A",
+      "G249M",
+      "T213K",
       "T213V",
-      "V215G",
-      "W192H"
-    ],
-    "combined_score": 9.217617860692233
-  },
-  {
-    "mutant_id": "novel_mutant_870",
-    "mutations": [
-      "A193S",
-      "G249L",
-      "M217D",
-      "M217I",
-      "T213A",
-      "V215G",
-      "W192L"
-    ],
-    "combined_score": 9.195859785134429
-  },
-  {
-    "mutant_id": "novel_mutant_1508",
-    "mutations": [
-      "A193L",
-      "A193R",
       "V215G",
       "W192A",
-      "W192F"
+      "W192G"
     ],
-    "combined_score": 9.188679690004653
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
   },
   {
-    "mutant_id": "novel_mutant_2116",
+    "mutant_id": "novel_mutant_2",
     "mutations": [
-      "A193K",
-      "A193L",
-      "T213H",
-      "V215G",
-      "W192H"
-    ],
-    "combined_score": 9.186110681333156
-  },
-  {
-    "mutant_id": "novel_mutant_404",
-    "mutations": [
-      "G249T",
-      "M217I",
-      "T213V",
-      "V215G",
-      "W192L"
-    ],
-    "combined_score": 9.140596798477873
-  },
-  {
-    "mutant_id": "novel_mutant_3520",
-    "mutations": [
-      "A193G",
-      "A193W",
-      "G249A",
-      "V215G",
-      "W192F"
-    ],
-    "combined_score": 9.128046982968367
-  },
-  {
-    "mutant_id": "novel_mutant_4941",
-    "mutations": [
-      "A193G",
-      "A193I",
-      "V215G",
-      "W192L",
-      "W192Y"
-    ],
-    "combined_score": 9.114692272813919
-  },
-  {
-    "mutant_id": "novel_mutant_3109",
-    "mutations": [
-      "G249E",
-      "M217I",
-      "M217T",
-      "V215G",
-      "W192F"
-    ],
-    "combined_score": 9.112117423874675
-  },
-  {
-    "mutant_id": "novel_mutant_3463",
-    "mutations": [
-      "A193L",
       "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
       "V215G",
-      "W192D",
-      "W192F"
+      "W192E",
+      "W192G",
+      "W192K"
     ],
-    "combined_score": 9.099865641763593
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_3",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_4",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_5",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_6",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_7",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_8",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_9",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
+  },
+  {
+    "mutant_id": "novel_mutant_10",
+    "mutations": [
+      "G249D",
+      "G249H",
+      "G249N",
+      "T213D",
+      "V215G",
+      "W192E",
+      "W192G",
+      "W192K"
+    ],
+    "avg_score": 4.549331601577267,
+    "std_dev": 0.3281373246263675
   }
 ]

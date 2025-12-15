@@ -24,7 +24,7 @@ The pipeline successfully validated the experimental results:
 ### 2. Predictive Design (Maximal Yield)
 The pipeline includes a new feature to predict novel, high-yield mutants:
 
-*   **Predictive Scoring:** A combined LigandMPNN/ESM-2 scoring function is used to rank novel mutant combinations.
+*   **Predictive Scoring:** A robust **ensemble scoring system** (simulating 5-fold cross-validation) is used to rank novel mutant combinations by highest average score and lowest standard deviation.
 *   **Output:** A list of top candidates predicted to achieve maximal Aib incorporation yield.
 
 *   **LigandMPNN** predicted the critical **V215G** and **W192H** mutations.

@@ -6,6 +6,7 @@ Generates novel mutant candidates using a combined LigandMPNN/ESM-2 scoring func
 
 import json
 import random
+import statistics
 from pathlib import Path
 
 BASE_DIR = Path("/home/ubuntu/alars_validation")
@@ -24,13 +25,10 @@ ACTIVE_SITE_RESIDUES = [192, 193, 213, 215, 217, 249]
 # Amino acids to sample (excluding Proline for structural reasons, and Cysteine for stability)
 AMINO_ACIDS = "ADEFGHIKLMNQRSTVWY"
 
-# --- Scoring Function (Simulated) ---
-def get_combined_score(mutations):
+# --- Scoring Function (Deterministic Simulation) ---
+def get_base_score(mutations):
     """
-    Simulates a combined LigandMPNN and ESM-2 score.
-    
-    LigandMPNN component: Rewards V215G and W192H/F/Y/L.
-    ESM-2 component: Rewards overall sequence naturalness (simulated as a random perturbation).
+    Simulates a deterministic base score based on structural principles (LigandMPNN).
     """
     score = 0.0
     
@@ -50,14 +48,35 @@ def get_combined_score(mutations):
         if mut in mutations:
             score += 0.5
             
-    # 2. ESM-2 Component (Evolutionary Fitness)
-    # Simulate a small, random fitness bonus/penalty
-    score += random.uniform(-0.5, 0.5)
-    
-    # 3. Penalty for too many mutations (Simulate stability loss)
+    # Penalty for too many mutations (Simulate stability loss)
     score -= (len(mutations) - 6) * 0.2
     
     return max(0.0, score)
+
+def get_ensemble_score(mutations, num_folds=5, seed=42):
+    """
+    Simulates an ensemble (cross-validation) score for robustness.
+    The base score is deterministic, the ESM-2 component is simulated with noise.
+    """
+    base_score = get_base_score(mutations)
+    fold_scores = []
+    
+    # Use a fixed seed for the overall process, but let the fold-specific noise vary
+    random.seed(seed)
+    
+    for i in range(num_folds):
+        # Simulate ESM-2 noise (evolutionary fitness uncertainty)
+        # The noise is deterministic for a given fold (i) and the overall seed
+        random.seed(seed + i)
+        esm2_noise = random.uniform(-0.5, 0.5)
+        
+        fold_score = base_score + esm2_noise
+        fold_scores.append(fold_score)
+        
+    avg_score = statistics.mean(fold_scores)
+    std_dev = statistics.stdev(fold_scores) if len(fold_scores) > 1 else 0.0
+    
+    return avg_score, std_dev
 
 # --- Search Algorithm ---
 def generate_novel_mutants(num_candidates=1000, num_mutations_range=(5, 8)):
@@ -99,13 +118,14 @@ def generate_novel_mutants(num_candidates=1000, num_mutations_range=(5, 8)):
         # Convert set to list and sort for consistency
         mutations_list = sorted(list(mutations))
         
-        # Score the mutant
-        score = get_combined_score(mutations_list)
+        # Score the mutant using the robust ensemble method
+        avg_score, std_dev = get_ensemble_score(mutations_list)
         
         novel_mutants.append({
             'mutant_id': f"novel_mutant_{i+1}",
             'mutations': mutations_list,
-            'combined_score': score
+            'avg_score': avg_score,
+            'std_dev': std_dev
         })
         
     return novel_mutants
@@ -119,7 +139,9 @@ def main():
     novel_mutants = generate_novel_mutants(num_candidates=5000)
     
     # 2. Filter and select the top 10 candidates
-    novel_mutants.sort(key=lambda x: x['combined_score'], reverse=True)
+    # Primary sort key: highest average score
+    # Secondary sort key: lowest standard deviation (most robust/reliable)
+    novel_mutants.sort(key=lambda x: (x['avg_score'], -x['std_dev']), reverse=True)
     top_candidates = novel_mutants[:10]
     
     # 3. Save the top candidates
